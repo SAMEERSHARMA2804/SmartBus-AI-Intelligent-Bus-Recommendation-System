@@ -1,0 +1,16 @@
+
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+import joblib
+
+data=pd.read_csv("../data/bus_data.csv")
+
+X=data[["distance","traffic","time_of_day"]]
+y=data["eta"]
+
+model=RandomForestRegressor()
+model.fit(X,y)
+
+joblib.dump(model,"eta_model.pkl")
+
+print("Model trained")
