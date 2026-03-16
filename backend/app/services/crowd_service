@@ -1,0 +1,5 @@
+
+import random
+
+def predict_crowd():
+ return random.choice(["Low","Medium","High"])
